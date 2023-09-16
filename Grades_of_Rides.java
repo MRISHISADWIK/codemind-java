@@ -1,34 +1,37 @@
-import java.util.*;
-public class GradesOfrides{
-    public static void main(String args[]){
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        if(a>50 && b>60 && c>100)
+import java.util.Scanner;
+public class Solution
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int h,s,d;
+        h=sc.nextInt();
+        s=sc.nextInt();
+        d=sc.nextInt();
+        if(h>50 && s>60 && d>100)
         {
-            System.out.print("10");
+            System.out.println("10");
         }
-        else if(a>50 && b>60)
+        else if( h>50 && s>60)
+         {
+            System.out.println('9');      
+         }
+        else if( s>60 && d>100)
         {
-            System.out.print("9");
+            System.out.println('8');
         }
-        else if(b>60 && c>100)
+        else if(h>50 && d>100)
         {
-            System.out.print("8");
+            System.out.println('7');
         }
-        else if(a>50 && c>100)
+        else if(h>50 || s>60 || d>100)
         {
-            System.out.print("7");
+            System.out.println('6');
         }
-        else if(a>50)
-       {
-           System.out.print("6");
-       }
-       else
-       {
-           System.out.print("5");
-       }
-        
+        else
+        {
+            System.out.println('5');
+        }
+           
     }
 }
