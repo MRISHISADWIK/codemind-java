@@ -1,43 +1,40 @@
-import java.util.*;
-public class PrimePalindrome{
-    static int prime(int k){
-        int c=0;
-        for(int i=2;i<k;i++)
-        {
-            if(k%i==0)
-            {
-                return 0;
-            }
-        }
-        return 1;
-    }
-static int palindrome(int s)
+import java.util.Scanner;
+public class Next_palindrome
 {
-    int rem,rev=0,temp=s;
-    while(temp!=0)
+    public static boolean ispalin(int n)
     {
-        rem = temp%10;
-        rev = rev*10+rem;
-        temp =temp/10;
+        int temp=n,res=0,r;
+        while(temp>0)
+        {
+            r=temp%10;
+            res=res*10+r;
+            temp=temp/10;
+        }
+        if(res==n)
+            return true;
+        else
+            return false;
     }
-    if(rev==s)
+    public static boolean isprime(int n)
     {
-        return 1;
+        if(n==1)
+            return false;
+        else{
+            for(int i=2;i<=(int)Math.sqrt(n)+1;i++)
+                if(n%i==0)
+                    return false;
+            return true;
+        }
     }
-    else
+    public static void main(String args[])
     {
-        return 0;
-    }
-}
-    public static void main(String args[]){
-       Scanner sc = new Scanner(System.in);
-       int n = sc.nextInt();
-       for(int i=n+1;;i++){
-           if(prime(i)==1 && palindrome(i)==1)
-           {
-               System.out.print(i);
-               break;
-           }
-       }
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        n++;
+        while(isprime(n)==false || ispalin(n)==false)
+        {
+            n++;
+        }
+        System.out.println(n);
     }
 }
